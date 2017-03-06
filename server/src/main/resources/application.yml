@@ -1,0 +1,13 @@
+server:
+  port: 8081
+  context-path: /
+
+management:
+  context-path: /status
+
+info:
+  build:
+    name: ${name}
+    group: ${group}
+    description: ${description}
+    version: ${version}

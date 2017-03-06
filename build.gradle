@@ -1,0 +1,25 @@
+allprojects {
+	defaultTasks 'clean', 'assemble'
+
+	group = 'com.odoni.oswbmc.streaming.server'
+	version = '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+}
+
+subprojects {
+	apply plugin: 'groovy'
+	apply plugin: 'maven'
+
+	sourceCompatibility = '1.8'
+	targetCompatibility = '1.8'
+
+	dependencies {
+		compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.8'
+
+		testCompile(group: 'org.spockframework', name: 'spock-core', version: '1.0-groovy-2.3') { exclude group: 'org.codehaus.groovy' }
+		testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.3'
+	}
+}
